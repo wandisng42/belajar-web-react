@@ -1,14 +1,12 @@
 import React from "react";
 
-
 export default function LandingPage() {
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800 text-white">
-      
+    <div className=" from-slate-900 via-indigo-900 to-slate-800 text-white">
       {/* HERO SECTION */}
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-6">
-        <h1 className="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-yellow-400 via-red-500 to-orange-500 bg-clip-text text-transparent">
-          boboboy  7 Elemental
+        <h1 className="text-4xl md:text-6xl font-extrabold  from-yellow-400 via-red-500 to-orange-500 bg-clip-text text-transparent">
+          boboboy 7 Elemental
         </h1>
 
         <p className="mt-6 max-w-2xl text-lg text-gray-300">
@@ -21,17 +19,14 @@ export default function LandingPage() {
         </button>
       </section>
 
-    
-
-
       {/* ABOUT SECTION */}
       <section className="py-20 px-6 bg-slate-900/60 backdrop-blur">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-yellow-400">Tentang Saya</h2>
           <p className="mt-6 text-gray-300 leading-relaxed">
-            Saya adalah boboboy, entitas dengan kekuatan 7 elemen utama.
-            Dengan keseimbangan energi semesta, saya menjaga harmoni antara
-            kekuatan destruktif dan penciptaan.
+            Saya adalah boboboy, entitas dengan kekuatan 7 elemen utama. Dengan
+            keseimbangan energi semesta, saya menjaga harmoni antara kekuatan
+            destruktif dan penciptaan.
           </p>
         </div>
       </section>
@@ -70,7 +65,8 @@ export default function LandingPage() {
 
       {/* FOOTER */}
       <footer className="py-6 text-center bg-black/40 text-gray-400">
-        © {new Date().getFullYear()} boboboy Kuasa 7 Elemental. All rights reserved.
+        © {new Date().getFullYear()} boboboy Kuasa 7 Elemental. All rights
+        reserved.
       </footer>
     </div>
   );

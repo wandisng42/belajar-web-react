@@ -4,7 +4,8 @@ import Faq from "./pages/faq";
 import Biodata from "./pages/biodata";
 import Home from "./pages/home";
 import Motion from "./pages/motion";
-import usestate from "./pages/useState";
+import UseState from "./pages/useState";
+import DataUser from "./pages/data-user";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       <Route path="/home" element={<Home />} />
       <Route path="/biodata" element={<Biodata />} />
       <Route path="/motion" element={<Motion />} />
+      <Route path="/useState" element={<UseState />} />
+      <Route path="/data-user" element={<DataUser />} />
     </Routes>
   );
 }
