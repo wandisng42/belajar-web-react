@@ -68,10 +68,10 @@ export default function DataUser() {
         <LoadingSpinner />
       ) : (
         <div className="w-screen min-h-screen bg-white-900 p-6 flex flex-col items-center justify-start">
-          <h1 className="text-3xl font-bold mb-4 text-center text-white">
+          <h1 className="text-3xl font-bold mb-4 text-center text-black-900">
             Data Carts
           </h1>
-          <p className="text-gray-100 text-center mb-4">
+          <p className="text-black-100 text-center mb-4">
             This page will display cart data.
           </p>
           <div className="mt-4 w-full max-w-2xl">
@@ -87,7 +87,7 @@ export default function DataUser() {
                   {cart.products.map((product) => (
                     <li
                       key={product.id}
-                      className="border p-4 rounded mb-2 bg-red-700"
+                      className="border p-4 rounded mb-2 bg-alice to-blue-100-700"
                     >
                       <div className="flex justify-between items-start">
                         <div className="flex-1">
