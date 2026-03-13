@@ -2,7 +2,7 @@ import React from "react";
 
 export default function LandingPage() {
   return (
-    <div className=" from-slate-900 via-indigo-900 to-slate-800 text-white">
+    <div className=" from-slate-900 via-indigo-900 to-slate-800 text-orange-400 min-h-screen flex items-center justify-center px-4s">
       {/* HERO SECTION */}
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-6">
         <h1 className="text-4xl md:text-6xl font-extrabold  from-yellow-400 via-red-500 to-orange-500 bg-clip-text text-transparent">
