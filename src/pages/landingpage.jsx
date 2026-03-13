@@ -9,7 +9,7 @@ export default function LandingPage() {
           boboboy 7 Elemental
         </h1>
 
-        <p className="mt-6 max-w-2xl text-lg text-gray-300">
+        <p className="mt-6 max-w-2xl text-lg text-orange-300">
           Penguasa tujuh elemen kekuatan alam. Mengendalikan api, air, angin,
           tanah, petir, cahaya, dan kegelapan dalam satu kekuatan absolut.
         </p>
