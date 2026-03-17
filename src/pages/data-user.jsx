@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import StyleDataUser from "./componend/carst data-user";
 
 // Loading Component dengan Animasi
 function LoadingSpinner() {
@@ -25,6 +27,8 @@ function LoadingSpinner() {
 }
 
 export default function DataUser() {
+  const navigate = useNavigate();
+
   const [carts, setCarts] = useState([]);
   const [quantities, setQuantities] = useState({});
   const [loading, setLoading] = useState(true);
@@ -71,84 +75,21 @@ export default function DataUser() {
           <h1 className="text-3xl font-bold mb-4 text-center text-black-900">
             Data Carts
           </h1>
+          <button
+            onClick={() => navigate("/")}
+            className="ml-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+          >
+            Back to data user
+          </button>
           <p className="text-black-100 text-center mb-4">
-            This page will display cart data.
+            This page will display cart data.lllllllll
           </p>
-          <div className="mt-4 w-full max-w-2xl">
-            {carts.map((cart) => (
-              <div
-                key={cart.id}
-                className="border p-4 rounded mb-4 bg-black-800"
-              >
-                <h2 className="text-xl font-semibold mb-2 text-white">
-                  Cart ID: {cart.id}
-                </h2>
-                <ul>
-                  {cart.products.map((product) => (
-                    <li
-                      key={product.id}
-                      className="border p-4 rounded mb-2 bg-alice to-blue-100-700"
-                    >
-                      <div className="flex justify-between items-start">
-                        <div className="flex-1">
-                          <p className="font-bold text-white">
-                            {product.title}
-                          </p>
-                          <p className="text-gray-200">
-                            Price: ${product.price}
-                          </p>
-                          <p className="text-gray-200">
-                            Discount: {product.discountPercentage}%
-                          </p>
-                          <img
-                            src={product.thumbnail}
-                            alt={product.title}
-                            className="w-16 h-16 mt-2"
-                          />
-                        </div>
-                        <div className="flex flex-col items-end gap-2">
-                          <div className="flex items-center gap-2">
-                            <button
-                              onClick={() =>
-                                handleQuantityChange(
-                                  product.id,
-                                  quantities[product.id] - 1,
-                                )
-                              }
-                              className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded"
-                            >
-                              -
-                            </button>
-                            <span className="text-white font-bold text-lg w-8 text-center">
-                              {quantities[product.id] || product.quantity}
-                            </span>
-                            <button
-                              onClick={() =>
-                                handleQuantityChange(
-                                  product.id,
-                                  quantities[product.id] + 1,
-                                )
-                              }
-                              className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded"
-                            >
-                              +
-                            </button>
-                          </div>
-                          <p className="text-gray-200 text-sm">
-                            Total: $
-                            {(
-                              product.price *
-                              (quantities[product.id] || product.quantity)
-                            ).toFixed(2)}
-                          </p>
-                        </div>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+
+          <StyleDataUser
+            carts={carts}
+            quantities={quantities}
+            handleQuantityChange={handleQuantityChange}
+          />
         </div>
       )}
     </>
