@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import StyleDataUser from "./componend/carst data-user";
+
+import { u } from "framer-motion/client";
+import StyleDataUser from "./component/style-data-user";
 
 // Loading Component dengan Animasi
 function LoadingSpinner() {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-900">
+    <div className="flex justify-center items-center min-h-screen bg-red-900">
       <div className="relative w-20 h-20">
         {/* Spinner utama */}
         <motion.div
@@ -54,6 +56,13 @@ export default function DataUser() {
   };
 
   const handleQuantityChange = (productId, newQuantity) => {
+    const handleview = async (userId) => {
+      console.log("handleview called with userId:", userId);
+      const cart = carts.find((cart) => cart.id === userId);
+      (cart.products.some((product) => product.id === productId),
+        navigate(`/detail-cards/${userId}`));
+    };
+
     if (newQuantity > 0) {
       setQuantities((prev) => ({
         ...prev,
@@ -82,13 +91,18 @@ export default function DataUser() {
             Back to data user
           </button>
           <p className="text-black-100 text-center mb-4">
-            This page will display cart data.lllllllll
+            Pilih produk untuk melihat detailnya. Anda dapat menyesuaikan jumlah
+            produk dan melihat total harga secara real-time. Klik "View Detail"
+            untuk informasi lebih lanjut tentang setiap produk dalam carts.
           </p>
 
           <StyleDataUser
             carts={carts}
             quantities={quantities}
             handleQuantityChange={handleQuantityChange}
+            handleView={(userId) => {
+              navigate(`/detail-carts/${userId}`);
+            }}
           />
         </div>
       )}
