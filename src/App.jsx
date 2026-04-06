@@ -6,7 +6,8 @@ import Home from "./pages/home";
 import Motion from "./pages/motion";
 import UseState from "./pages/useState";
 import DataUser from "./pages/data-user";
-import DetailCards from "./pages/detail-cards";
+import DetailCarts from "./pages/detail-carts";
+import DetailProduct from "./pages/detail-product";
 import StyleDataUser from "./pages/component/style-data-user";
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
       <Route path="/motion" element={<Motion />} />
       <Route path="/useState" element={<UseState />} />
       <Route path="/data-user" element={<DataUser />} />
-      <Route path="/detail-cards/:userid" element={<DetailCards />} />
+      <Route path="/detail-carts/:userid" element={<DetailCarts />} />
+      <Route path="/detail-product/:id" element={<DetailProduct />} />
       <Route path="/style-data-user" element={<StyleDataUser />} />
     </Routes>
   );

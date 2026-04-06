@@ -19,7 +19,6 @@ export default function DetailCards() {
 
       setCarts(response.data.carts);
 
-      // init quantity
       const initialQty = {};
       response.data.carts.forEach((cart) => {
         cart.products.forEach((product) => {
@@ -54,27 +53,26 @@ export default function DetailCards() {
 
   return (
     <div className="w-screen min-h-screen bg-gray-100 p-6 flex flex-col items-center">
-      <h1 className="text-3xl font-bold mb-4 text-gray-800">
-        Detail Cart User {userid}
-      </h1>
-      <h1>pppp</h1>
+      <h1 className="text-3xl font-bold mb-4">Detail Carts User {userid}</h1>
 
       <button
-        onClick={() => navigate("/data-user")}
-        className="mb-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+        onClick={() => navigate("/")}
+        className="mb-4 bg-blue-500 text-white px-4 py-2 rounded"
       >
         Back
       </button>
 
-      {carts.length > 0 ? (
-        <StyleDataUser
-          carts={carts}
-          quantities={quantities}
-          handleQuantityChange={handleQuantityChange}
-        />
-      ) : (
-        <p className="text-gray-600">Data tidak ditemukan</p>
-      )}
+      <StyleDataUser
+        carts={carts}
+        quantities={quantities}
+        handleQuantityChange={handleQuantityChange}
+        handleView={(userId) => {
+          navigate(`/detail-carts/${userId}`);
+        }}
+        handleProductClick={(productId) => {
+          navigate(`/detail-product/${productId}`);
+        }}
+      />
     </div>
   );
 }

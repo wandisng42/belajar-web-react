@@ -3,6 +3,7 @@ export default function StyleDataUser({
   quantities,
   handleQuantityChange,
   handleView,
+  handleProductClick,
 }) {
   return (
     <div className="mt-4 w-full max-w-2xl">
@@ -28,7 +29,8 @@ export default function StyleDataUser({
               return (
                 <li
                   key={product.id}
-                  className="border p-4 rounded mb-2 bg-green-700"
+                  className="border p-4 rounded mb-2 bg-green-700 cursor-pointer"
+                  onClick={() => handleProductClick(product.id)}
                 >
                   <div className="flex justify-between items-start">
                     <div className="flex-1">
